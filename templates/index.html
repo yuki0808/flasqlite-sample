@@ -1,0 +1,48 @@
+{% block title %}
+<img src="/static/images/dd.jpg" alt="dd">
+{% endblock %}
+ 
+{% block headline %}
+<h1>{{title}}</h1>
+{% endblock %}
+ 
+{% block content %}
+<div class="mb-3" id="msg">{{message}}</div>
+ 
+<div id="app" class="m-3">
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Mail</th>
+                    <th>Age</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in data %}
+                <tr>
+                    <th>{{item[0]}}</th>
+                    <th>{{item[1]}}</th>
+                    <th>{{item[2]}}</th>
+                    <th>{{item[3]}}</th>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+ 
+{% raw %}
+{% endraw %}
+ 
+ 
+<script>
+    // start Vue.
+    new Vue({
+        el:'#app',
+    });
+</script>
+
